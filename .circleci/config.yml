@@ -15,7 +15,7 @@ jobs:
     steps:
       - run:
           name: "Say hello"
-          command: "echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>."
+          command: "Hello $NAME"
 
 workflows:
   say-hello-workflow:
