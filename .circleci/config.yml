@@ -10,8 +10,6 @@ jobs:
           command: "echo Wrold, World!"
   
   say-hello:
-    requires:
-      - say-world
     docker:
       - image: circleci/node:13.8.0
     steps:
@@ -22,5 +20,7 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-world
       - say-hello
+      - say-world:
+          requires:
+            - say-hello
