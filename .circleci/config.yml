@@ -9,7 +9,7 @@ jobs:
     steps:
       - run:
           name: "Say World"
-          command: "echo Wrold, World!"
+          command: "echo $NAME"
   
   say-hello:
     docker:
