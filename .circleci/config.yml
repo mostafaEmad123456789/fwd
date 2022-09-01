@@ -15,7 +15,7 @@ jobs:
     steps:
       - run:
           name: "Say hello"
-          command: "Hello $NAME"
+          command: "echo 'Hello $NAME'"
 
 workflows:
   say-hello-workflow: 
