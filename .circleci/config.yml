@@ -2,6 +2,8 @@ version: 2.1
 
 jobs:
   say-world:
+    environment:
+      - NAME: Mostafa
     docker:
       - image: circleci/node:13.8.0
     steps:
