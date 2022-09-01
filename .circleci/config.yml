@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  say-world:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          name: "Say World"
+          command: "echo Wrold, World!"
+  
+  say-hello:
+    requires:
+      - say-world
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
+
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-world
+      - say-hello
